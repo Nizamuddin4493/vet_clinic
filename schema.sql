@@ -15,7 +15,7 @@ postgres=# \c vet_clinic
 You are now connected to database "vet_clinic" as user "postgres".
 
 vet_clinic=# CREATE TABLE animals (
-  id INT GENERATED ALWAYS AS IDENTITY,
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name varchar(255),
   date_of_birth date,
   escape_attempts integer,
@@ -24,3 +24,6 @@ vet_clinic=# CREATE TABLE animals (
 );
 CREATE TABLE
 vet_clinic=#
+
+ALTER TABLE animals
+ADD species varchar(255);
