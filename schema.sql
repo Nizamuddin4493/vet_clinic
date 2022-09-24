@@ -27,3 +27,25 @@ vet_clinic=#
 
 ALTER TABLE animals
 ADD species varchar(255);
+
+CREATE TABLE owners (
+id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+full_name varchar(100),
+age INT,
+);
+
+CREATE TABLE species (
+id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+name varchar(100)
+);
+
+ALTER TABLE animals
+DROP COLUMN species;
+
+ALTER TABLE animals 
+ADD COLUMN species_id INT REFERENCES species(id)
+ON DELETE CASCADE;
+
+ALTER TABLE animals
+ADD COLUMN owners_id INT REFERENCES owners(id)
+ON DELETE CASCADE;
