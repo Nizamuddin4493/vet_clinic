@@ -4,6 +4,9 @@
 ## Getting Started
 > copy the SSH key, clone it in your Visual Studio code.
 
+## Database Schema Diagram
+![DSD](./images/database_diagram.png)
+
 ## Install
 - PostgreSQL
 
